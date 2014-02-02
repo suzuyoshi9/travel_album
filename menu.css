@@ -1,0 +1,9 @@
+/* http://fjiblog.cocolog-nifty.com/blog/2012/05/web-0bf7.html 参考 */
+div.menus{float:left; width:20%;}
+div.list{text-align:center; width:80%;}
+.menuitem{background-color:#ffffcc; cursor:pointer; width:100px;}
+.menu_on, .menu_off{margin:2px 0px;}
+.menu_on .menuitem{border:1px solid #cccc77; border-left:5px solid #cccc77;}
+.menu_off .menuitem{border:1px solid #77cccc; border-left:5px solid #77cccc;}
+.menu_on ul{display:auto; margin:2px auto;}
+.menu_off ul{display:none;}

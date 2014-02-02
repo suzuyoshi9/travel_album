@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>旅行検索</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+<p>旅行検索<br※現在は複数条件を組み合わせた検索はできません</p>
+<form action="search.php" method="POST">
+<p>旅行名:<input type="text" name="caption" size="10" required>
+<input type="hidden" name="disposal" value="caption">
+<input type="submit" value="送信"></p>
+</form>
+<form action="search.php" method="POST">
+<p>開始月:<input type="month" name="start" size="10" required>
+終了月:<input type="month" name="end" size="10" required>
+<input type="hidden" name="disposal" value="date">
+<input type="submit" value="送信"></p>
+</form>
+<form action="search.php" method="POST">
+<p>作成者名:<input type="text" name="user" size="10" required>
+<input type="hidden" name="disposal" value="user">
+<input type="submit" value="送信"></p>
+</form>
+<a href="/travel_album">メインへ</a>
+</body>
+</html>

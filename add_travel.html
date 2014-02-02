@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>旅行の追加</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+<p>旅行データ追加</p>
+<form action="add.php" method="POST" enctype="multipart/form-data">
+<p>旅行ID（英数字）:<input type="text" name="ID" size="10" pattern="^[0-9A-Za-z]+$" required></p>
+<p>旅行タイトル:<input type="text" name="caption" size="20" required></p>
+<p>旅行開始日:<input type="date" name="start" required></p>
+<p>旅行終了日:<input type="date" name="end" required></p>
+<p>ファイル選択（10枚まで可能）<input type="file" name="image[]" accept="image/*" multiple required></p>
+<input type="hidden" name="disposal" value="travel">
+<p><input type="submit" value="送信"></p>
+</form>
+<a href="/travel_album">メインへ</a>
+</body>
+</html>
