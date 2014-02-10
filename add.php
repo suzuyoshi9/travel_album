@@ -1,6 +1,6 @@
 <?php
    include_once "DatabaseClass.php";
-
+   session_start();
    if(!isset($_SESSION["USERID"])){
     die('<html><body>ログインしていません<br><a href="javascript:history.go(-1)">戻る</a>');
    }

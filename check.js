@@ -3,6 +3,8 @@
 function check(){
 	if(GetFileName(location.href)==="delete_user.html")
           message="送信してよろしいですか？\n写真と旅行も削除されます";
+	else if(GetFileName(location.href)==="delete_travel.php")
+          message="送信してもよろしいですか？\n写真も削除されます";
         else message="送信してもよろしいですか？";
 	if(window.confirm(message)){ // 確認ダイアログを表示
 

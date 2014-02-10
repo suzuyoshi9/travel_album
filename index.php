@@ -20,15 +20,15 @@ else echo "ログインしていません<br><br>";
  <ul>
   <li><a href="search_travel.html">検索</a></li>
   <li><a href="add_travel.html">追加</a></li>
-  <li><a href="modify_travel.php">編集</a></li>
+  <li><a href="#">編集(未実装)</a></li>
   <li><a href="delete_travel.php">削除</a></li>
  </ul>
 </div>
 <div class="menu_off">
  <div class="menuitem" onclick="doToggleClassName(getParentObj(this),'menu_on','menu_off')">写真</div>
  <ul>
-  <li><a href="add_photo.html">追加</a></li>
-  <li><a href="delete_photo.php">削除</a></li>
+  <li><a href="#">追加(未実装)</a></li>
+  <li><a href="#">削除(未実装)</a></li>
  </ul>
 </div>
 <div class="menu_off">
@@ -36,7 +36,7 @@ else echo "ログインしていません<br><br>";
  <ul>
   <li><a href="add_user.html">追加</a></li>
   <li><a href="modify_user.html">編集</a></li>
-  <li><a href="delete_user.html">削除</a></li>
+  <li><a href="#">削除(未実装)</a></li>
   <li><a href="login.html">ログイン</a></li>
   <li><a href="logout.php">ログアウト</a></li>
  </ul>
