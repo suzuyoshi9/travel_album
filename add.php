@@ -24,7 +24,7 @@
         if(!$result) die("旅行の追加に失敗しました");
         $travel_id=$db->insert_id;
 
-        photo($name,$file);
+        photo($ID,$file);
         /*foreach($file["image"]["error"] as $key => $error){
             if($error==UPLOAD_ERR_OK){
                 $moto_name=$file["image"]["name"][$key];
