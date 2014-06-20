@@ -24,7 +24,7 @@
         if(!$result) die("旅行の追加に失敗しました");
         $travel_id=$db->insert_id;
 
-        $this->photo($name,$file);
+        photo($name,$file);
         /*foreach($file["image"]["error"] as $key => $error){
             if($error==UPLOAD_ERR_OK){
                 $moto_name=$file["image"]["name"][$key];
@@ -70,6 +70,6 @@
                 $image->writeImages("$up_thumb/$file_name",true);
             }
         }
-        echo "<html><body>写真の追加に成功しました。<br><a href=index.php>トップに戻る</a></body></html>";
+        echo "写真の追加に成功しました。";
     }
 ?>
