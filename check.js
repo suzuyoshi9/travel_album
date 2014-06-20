@@ -7,16 +7,11 @@ function check(){
           message="送信してもよろしいですか？\n写真も削除されます";
         else message="送信してもよろしいですか？";
 	if(window.confirm(message)){ // 確認ダイアログを表示
-
 		return true; // 「OK」時は送信を実行
-
 	}
 	else{ // 「キャンセル」時の処理
-
 		return false; // 送信を中止
-
 	}
-
 }
 //http://asobicocoro.com/tips/article/48 参考
 function GetFileName(file_url){

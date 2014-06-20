@@ -21,7 +21,7 @@ class Database{
 
 	public function connect(){
 		$this->link=new mysqli($this->dbServer,$this->dbUser,$this->dbPass,$this->dbName) or die ("DB Connection Failed!");
-                $this->link->query("SET NAMES utf8");
+                $this->link->set_charset("utf8");
 	}
 
 	public function change_user(){
@@ -74,12 +74,12 @@ class Database{
 
 	public function gettid($travel){
 		if(isset($this->stmt)) $this->stmt->reset();
-                $this->stmt=$this->link->prepare("select id from travel where travel_name = ?");
+        $this->stmt=$this->link->prepare("select id from travel where travel_name = ?");
 		$this->stmt->bind_param('s',$travel);
-                $this->stmt->execute() or exit("bind error");
-                $this->stmt->bind_result($result);
-                $this->stmt->fetch();
-                return $result;
+        $this->stmt->execute() or exit("bind error");
+        $this->stmt->bind_result($result);
+        $this->stmt->fetch();
+        return $result;
 	}
 
 	public function __destruct(){
