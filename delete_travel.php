@@ -31,7 +31,7 @@
      while($result->fetch()){
         echo "<option value=".$travel_name.">";
         echo $caption;
-        echo "</potion>";
+        echo "</option>";
      }
      echo "</select>";
      echo "<input type='hidden' name='disposal' value='travel'>";
