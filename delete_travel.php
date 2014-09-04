@@ -1,11 +1,11 @@
 <?php
-   include_once "DatabaseClass.php";
-   session_start();
-   if(!isset($_SESSION["USERID"])){
+include_once "DatabaseClass.php";
+session_start();
+if(!isset($_SESSION["USERID"])){
     die('<html><body>ログインしていません<br><a href="javascript:history.go(-1)">戻る</a>');
-   }
-   $db = new Database();
-   $user=$_SESSION["USERID"];
+}
+$db = new Database();
+$user=$_SESSION["USERID"];
 ?>
 <!DOCTYPE HTML>
 <html>
