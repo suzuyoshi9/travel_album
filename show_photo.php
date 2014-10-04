@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="main.css" type="text/css">
+<link rel="stylesheet" href="resources/main.css" type="text/css">
 <?php
 $travel=$_GET['travel'];
 include "show.php";

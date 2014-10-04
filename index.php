@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>旅行写真データベース</title>
-<script type="text/javascript" src="menu.js"></script>
-<link rel="stylesheet" href="main.css" type="text/css">
-<link rel="stylesheet" href="menu.css" type="text/css">
+<script type="text/javascript" src="resources/menu.js"></script>
+<link rel="stylesheet" href="resources/main.css" type="text/css">
+<link rel="stylesheet" href="resources/menu.css" type="text/css">
 </head>
 <body>
 <h1>Travel Album</h1>

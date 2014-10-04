@@ -11,8 +11,8 @@ $user=$_SESSION["USERID"];
 <html>
 <head>
 <title>旅行の削除</title>
-<link rel="stylesheet" href="main.css" type="text/css">
-<script type="text/javascript" src="check.js"></script>
+<link rel="stylesheet" href="resources/main.css" type="text/css">
+<script type="text/javascript" src="resources/check.js"></script>
 </head>
 <body>
 <p>旅行の削除</p>
