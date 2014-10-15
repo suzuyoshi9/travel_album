@@ -18,8 +18,8 @@ class Database{
         $this->connect();	
     }
 
-    public function connect(){
-        $this->link=new mysqli($this->dbServer,$this->dbUser,$this->dbPass,$this->dbName) or die ("DB Connection Failed!");
+    private function connect(){
+        $this->link=new mysqli($this->dbServer,$this->dbUser,$this->dbPass,$this->dbName) or die ("Connect Error:".$this->link->connect_error);
         $this->link->set_charset("utf8");
     }
 
@@ -37,8 +37,8 @@ class Database{
 
     public function query($query){
         if(isset($this->stmt)) $this->stmt->reset();
-        $this->stmt=$this->link->prepare($query) or exit("prepare error");
-        $this->stmt->execute() or exit("bind error");
+        $this->stmt=$this->link->prepare($query) or exit($this->getError());
+        $this->stmt->execute() or exit($this->getError());
         $this->insert_id=$this->stmt->insert_id;
         $this->stmt->store_result();
         return $this->stmt;
@@ -46,16 +46,16 @@ class Database{
 
     public function prepare($query){
         if(isset($this->stmt)) $this->stmt->reset();
-        $this->stmt=$this->link->prepare($query) or exit("prepare error");
+        $this->stmt=$this->link->prepare($query) or exit($this->getError());
     }
 
     public function bind_param(){
         $params=func_get_args();
-        call_user_func_array(array($this->stmt,'bind_param'),$this->refValues($params)) or exit("bind error");
+        call_user_func_array(array($this->stmt,'bind_param'),$this->refValues($params)) or exit($this->getError());
     }
 
     public function execute(){
-        $this->stmt->execute() or exit("execute error");
+        $this->stmt->execute() or exit($this->getError());
         $this->insert_id=$this->stmt->insert_id;
         $this->stmt->store_result();
         return $this->stmt;
@@ -65,7 +65,7 @@ class Database{
         if(isset($this->stmt)) $this->stmt->reset();
         $this->stmt=$this->link->prepare("select id from user where name = ?");
         $this->stmt->bind_param('s',$user);
-        $this->stmt->execute() or exit("bind error");
+        $this->stmt->execute() or exit($this->getError());
         $this->stmt->bind_result($result);
         $this->stmt->fetch();
         return $result;	
@@ -75,7 +75,7 @@ class Database{
         if(isset($this->stmt)) $this->stmt->reset();
         $this->stmt=$this->link->prepare("select id from travel where travel_name = ?");
         $this->stmt->bind_param('s',$travel);
-        $this->stmt->execute() or exit("bind error");
+        $this->stmt->execute() or exit($this->getError());
         $this->stmt->bind_result($result);
         $this->stmt->fetch();
         return $result;
@@ -85,7 +85,7 @@ class Database{
         $this->close();
     }
 
-    public function refValues($arr){ 
+    private function refValues($arr){ 
         //http://stackoverflow.com/questions/16120822/mysqli-bind-param-expected-to-be-a-reference-value-given
         if (strnatcmp(phpversion(),'5.3') >= 0) //Reference is required for PHP 5.3+
         {
@@ -95,6 +95,10 @@ class Database{
             return $refs;
         }
         return $arr;
+    }
+
+    private getError(){
+        return "Error:".$this->link->error;
     }
 }
 ?>
