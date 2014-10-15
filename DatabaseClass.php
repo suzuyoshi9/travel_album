@@ -19,7 +19,8 @@ class Database{
     }
 
     private function connect(){
-        $this->link=new mysqli($this->dbServer,$this->dbUser,$this->dbPass,$this->dbName) or die ("Connect Error:".$this->link->connect_error);
+        $this->link=new mysqli($this->dbServer,$this->dbUser,$this->dbPass,$this->dbName);
+        if($this->link->connect_error) die("Connect Error:".'('.$this->link->connect_errno.')'.$this->link->connect_error);
         $this->link->set_charset("utf8");
     }
 
@@ -98,7 +99,7 @@ class Database{
     }
 
     private function getError(){
-        return "Error:".$this->link->error;
+        return "Error:".'('.$this->link->errno.')'.$this->link->error;
     }
 }
 ?>
