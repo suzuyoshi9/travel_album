@@ -97,7 +97,7 @@ class Database{
         return $arr;
     }
 
-    private getError(){
+    private function getError(){
         return "Error:".$this->link->error;
     }
 }
